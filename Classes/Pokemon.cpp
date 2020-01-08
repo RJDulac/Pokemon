@@ -6,17 +6,9 @@ class Pokemon
 {
 
 protected:
-    bool isNormal;
-    bool isFairy;
-    bool isGrass;
-    bool isPoison;
-    bool isFire;
-    bool isFlying;
-    bool isBug;
-    bool isElectric;
-
     string name;
     int pokedexNumber;
+    vector<string> typeCollection;
 
 public:
     enum Type
@@ -31,42 +23,33 @@ public:
         ELECTRIC
 
     };
-    vector<string> typeCollection;
 
     void SetType(Type type)
     {
         switch (type)
         {
         case NORMAL:
-            isNormal = true;
             typeCollection.push_back("Normal");
             break;
         case FAIRY:
-            isFairy = true;
             typeCollection.push_back("Fairy");
             break;
         case GRASS:
-            isGrass = true;
             typeCollection.push_back("Grass");
             break;
         case POISON:
-            isPoison = true;
             typeCollection.push_back("Poison");
             break;
         case FIRE:
-            isFire = true;
             typeCollection.push_back("Fire");
             break;
         case FLYING:
-            isFlying = true;
             typeCollection.push_back("Flying");
             break;
         case BUG:
-            isBug = true;
             typeCollection.push_back("Bug");
             break;
         case ELECTRIC:
-            isElectric = true;
             typeCollection.push_back("Electric");
             break;
         default:
@@ -87,38 +70,6 @@ public:
         return name;
     }
 
-    /*void SetType(Type type)
-    {
-        switch (type)
-        {
-        case NORMAL:
-            isNormal = true;
-            break;
-        case FAIRY:
-            isFairy = true;
-            break;
-        case GRASS:
-            isGrass = true;
-            break;
-        case POISON:
-            isPoison = true;
-            break;
-        case FIRE:
-            isFire = true;
-            break;
-        case FLYING:
-            isFlying = true;
-            break;
-        case BUG:
-            isBug = true;
-            break;
-        case ELECTRIC:
-            isElectric = true;
-            break;
-        default:
-            cout << "something went wrong";
-        }
-    }*/
     void TypeInfo()
     {
         cout << name << " is type ";
@@ -128,36 +79,18 @@ public:
         }
         cout << endl;
     }
-    bool GetNormal()
+    bool CheckType(string pokeType)
     {
-        return isNormal;
-    }
-    bool GetFairy()
-    {
-        return isFairy;
-    }
-    bool GetGrass()
-    {
-        return isGrass;
-    }
-    bool GetPoison()
-    {
-        return isPoison;
-    }
-    bool GetFire()
-    {
-        return isFire;
-    }
-    bool GetFlying()
-    {
-        return isFlying;
-    }
-    bool GetBug()
-    {
-        return isBug;
-    }
-    bool GetElectric()
-    {
-        return isElectric;
+        for (string type : typeCollection)
+        {
+            if (type == pokeType)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 };
