@@ -7,15 +7,20 @@ int main()
 {
     Pokemon myPokemon("Eevee", Pokemon::NORMAL);
 
-    if (myPokemon.GetNormal() == true)
-    {
-        cout << myPokemon.GetName() << " is "
-             << " normal." << endl;
-    }
-    Pokemon pikachu("Pikachu", Pokemon::ELECTRIC);
+    myPokemon.TypeInfo();
 
-    if (pikachu.GetElectric() == true)
-    {
-        cout << pikachu.GetName() << " Zaps!" << endl;
-    }
+    Pokemon sylveon("Sylveon", Pokemon::NORMAL, Pokemon::FAIRY);
+
+    sylveon.TypeInfo();
+    // if (myPokemon.GetNormal() == true)
+    // {
+    //     cout << myPokemon.GetName() << " is "
+    //          << " normal." << endl;
+    // }
+    // Pokemon pikachu("Pikachu", Pokemon::ELECTRIC);
+
+    // if (pikachu.GetElectric() == true)
+    // {
+    //     cout << pikachu.GetName() << " Zaps!" << endl;
+    // }
 }
